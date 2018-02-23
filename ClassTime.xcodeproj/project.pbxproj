@@ -11,6 +11,7 @@
 		EB07159B20407421004A3C44 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB07159A20407421004A3C44 /* Week.swift */; };
 		EB944C792040784800355AAC /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB944C782040784800355AAC /* ScheduleViewController.swift */; };
 		EB944C7B20407F9800355AAC /* SetWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB944C7A20407F9800355AAC /* SetWeekViewController.swift */; };
+		EB944C7D2040875000355AAC /* SetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB944C7C2040875000355AAC /* SetTimeViewController.swift */; };
 		EBD009372040729C002A2AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD009362040729C002A2AD6 /* AppDelegate.swift */; };
 		EBD009392040729C002A2AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD009382040729C002A2AD6 /* ViewController.swift */; };
 		EBD0093C2040729C002A2AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBD0093A2040729C002A2AD6 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		EB07159A20407421004A3C44 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		EB944C782040784800355AAC /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		EB944C7A20407F9800355AAC /* SetWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWeekViewController.swift; sourceTree = "<group>"; };
+		EB944C7C2040875000355AAC /* SetTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeViewController.swift; sourceTree = "<group>"; };
 		EBD009332040729C002A2AD6 /* ClassTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD009362040729C002A2AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBD009382040729C002A2AD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				EBD009362040729C002A2AD6 /* AppDelegate.swift */,
 				EBD009382040729C002A2AD6 /* ViewController.swift */,
 				EBD0093A2040729C002A2AD6 /* Main.storyboard */,
+				EB944C7C2040875000355AAC /* SetTimeViewController.swift */,
 				EB944C7A20407F9800355AAC /* SetWeekViewController.swift */,
 				EB944C782040784800355AAC /* ScheduleViewController.swift */,
 				EB07159A20407421004A3C44 /* Week.swift */,
@@ -222,6 +225,7 @@
 			files = (
 				EBD009392040729C002A2AD6 /* ViewController.swift in Sources */,
 				EBD009372040729C002A2AD6 /* AppDelegate.swift in Sources */,
+				EB944C7D2040875000355AAC /* SetTimeViewController.swift in Sources */,
 				EB07159B20407421004A3C44 /* Week.swift in Sources */,
 				EB944C792040784800355AAC /* ScheduleViewController.swift in Sources */,
 				EB944C7B20407F9800355AAC /* SetWeekViewController.swift in Sources */,

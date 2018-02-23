@@ -84,6 +84,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJu-r4-Xkc">
                                 <rect key="frame" x="16" y="230" width="62" height="30"/>
                                 <state key="normal" title="時間設定"/>
+                                <connections>
+                                    <segue destination="7jx-RL-nfU" kind="show" id="urb-kW-zXA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9a-aV-h8L">
                                 <rect key="frame" x="16" y="185" width="62" height="30"/>
@@ -116,139 +119,6 @@
             <point key="canvasLocation" x="2354" y="306"/>
         </scene>
         <!--Set Week View Controller-->
-        <scene sceneID="1qD-WD-avu">
-            <objects>
-                <viewController id="sll-fE-4eG" customClass="SetWeekViewController" customModule="ClassTime" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uNz-ME-YBp"/>
-                        <viewControllerLayoutGuide type="bottom" id="AHX-KW-bVO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jg5-Hg-xa3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHW-pg-L9h">
-                                <rect key="frame" x="87.5" y="150" width="200" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftJ-kH-xA7">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="木" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="thubtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="fuT-73-Lco"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQm-Xk-XlW">
-                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="金" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fribtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="JBc-iA-Ybs"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U80-Qm-a0t">
-                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="土" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="satbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="iY4-fm-6Cv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edr-lg-XZM">
-                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="off" backgroundImage="nezumi"/>
-                                        <connections>
-                                            <action selector="offbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="gdR-e4-1RL"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Eu-4f-LEG">
-                                <rect key="frame" x="87.5" y="80" width="200" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olI-p7-MdQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="日" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sunbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="EJV-W8-z1Z"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBG-fu-hTb">
-                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="月" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="monbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="26I-Wn-ObD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Np-hZ-RVC">
-                                        <rect key="frame" x="100" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="火" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tuebtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="tub-U1-Ifk"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBX-f2-eLz">
-                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="水" backgroundImage="nezumi">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="wedbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="mTf-Es-aM7"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVy-Mv-dTg">
-                                <rect key="frame" x="164" y="250" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="setData:" destination="sll-fE-4eG" eventType="touchUpInside" id="a60-LH-uuw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6Eu-4f-LEG" firstAttribute="top" secondItem="uNz-ME-YBp" secondAttribute="bottom" constant="60" id="0qg-UT-T2D"/>
-                            <constraint firstItem="FVy-Mv-dTg" firstAttribute="top" secondItem="pHW-pg-L9h" secondAttribute="bottom" constant="50" id="4ea-Ts-Kf8"/>
-                            <constraint firstItem="6Eu-4f-LEG" firstAttribute="centerX" secondItem="Jg5-Hg-xa3" secondAttribute="centerX" id="NIj-5r-eoI"/>
-                            <constraint firstItem="pHW-pg-L9h" firstAttribute="centerX" secondItem="Jg5-Hg-xa3" secondAttribute="centerX" id="SVP-54-3kr"/>
-                            <constraint firstItem="pHW-pg-L9h" firstAttribute="top" secondItem="6Eu-4f-LEG" secondAttribute="bottom" constant="20" id="gSV-qf-oO0"/>
-                            <constraint firstItem="FVy-Mv-dTg" firstAttribute="centerX" secondItem="Jg5-Hg-xa3" secondAttribute="centerX" id="ynA-Hd-JVY"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="fribtn" destination="HQm-Xk-XlW" id="zjq-Ms-knE"/>
-                        <outlet property="monbtn" destination="bBG-fu-hTb" id="Ue7-H2-QiM"/>
-                        <outlet property="satbtn" destination="U80-Qm-a0t" id="e54-Hj-X0L"/>
-                        <outlet property="setData" destination="FVy-Mv-dTg" id="FDi-bc-llW"/>
-                        <outlet property="sunbtn" destination="olI-p7-MdQ" id="sOF-m8-Fkm"/>
-                        <outlet property="thubtn" destination="ftJ-kH-xA7" id="afM-SU-1dg"/>
-                        <outlet property="tuebtn" destination="3Np-hZ-RVC" id="qAn-0r-qve"/>
-                        <outlet property="wedbtn" destination="CBX-f2-eLz" id="pP3-nX-c0d"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WkF-EV-qw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2270" y="1079"/>
-        </scene>
-        <!--Set Week View Controller-->
         <scene sceneID="Som-Iq-0zY">
             <objects>
                 <viewController id="VcC-we-epw" customClass="SetWeekViewController" customModule="ClassTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -270,7 +140,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="sunbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="ATP-hS-d1R"/>
+                                            <action selector="sunbtn:" destination="VcC-we-epw" eventType="touchUpInside" id="mYz-6c-Dk8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZE-n8-dH7">
@@ -280,7 +150,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="monbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="elh-Bd-yFa"/>
+                                            <action selector="monbtn:" destination="VcC-we-epw" eventType="touchUpInside" id="S2U-IW-Bpw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8j-Qh-ele">
@@ -290,7 +160,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="tuebtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="Tf9-XG-WD1"/>
+                                            <action selector="tuebtn:" destination="VcC-we-epw" eventType="touchUpInside" id="NV0-OJ-lYM"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ift-9D-vcA">
@@ -300,7 +170,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="wedbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="A4L-5y-waH"/>
+                                            <action selector="wedbtn:" destination="VcC-we-epw" eventType="touchUpInside" id="0pP-qi-iBm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -315,7 +185,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="thubtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="wM7-iZ-4cS"/>
+                                            <action selector="thubtn:" destination="VcC-we-epw" eventType="touchUpInside" id="2I2-hY-D0V"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drj-Zc-hqv">
@@ -325,7 +195,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="fribtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="GpS-8t-eXU"/>
+                                            <action selector="fribtn:" destination="VcC-we-epw" eventType="touchUpInside" id="9EE-SX-ddh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WO-mt-Hyn">
@@ -335,7 +205,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="satbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="f8S-nN-XNa"/>
+                                            <action selector="satbtn:" destination="VcC-we-epw" eventType="touchUpInside" id="eeb-qH-5fg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-CD-XWI">
@@ -343,7 +213,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="off" backgroundImage="nezumi"/>
                                         <connections>
-                                            <action selector="offbtn:" destination="sll-fE-4eG" eventType="touchUpInside" id="l2S-Vn-EuE"/>
+                                            <action selector="offbtn:" destination="VcC-we-epw" eventType="touchUpInside" id="X0Z-qt-IpO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -357,10 +227,19 @@
                             <constraint firstItem="Y6D-pe-6ne" firstAttribute="top" secondItem="F0p-sW-ehv" secondAttribute="bottom" constant="20" id="hyU-2t-9Y7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fribtn" destination="drj-Zc-hqv" id="UDr-Bw-FfR"/>
+                        <outlet property="monbtn" destination="bZE-n8-dH7" id="rwO-tE-cAP"/>
+                        <outlet property="satbtn" destination="1WO-mt-Hyn" id="GzU-BW-ktv"/>
+                        <outlet property="sunbtn" destination="1Gn-Hm-fCP" id="wca-df-wWB"/>
+                        <outlet property="thubtn" destination="QJe-fb-gPY" id="X8o-hY-tw2"/>
+                        <outlet property="tuebtn" destination="z8j-Qh-ele" id="XIU-iG-O21"/>
+                        <outlet property="wedbtn" destination="ift-9D-vcA" id="fU3-x6-f48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHc-sj-mYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="784"/>
+            <point key="canvasLocation" x="3234" y="645"/>
         </scene>
         <!--Set Time Table View Controller-->
         <scene sceneID="lKb-hR-KcZ">
@@ -404,7 +283,34 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhm-ww-Lfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="1554"/>
+            <point key="canvasLocation" x="1876" y="1146"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tLs-V1-sbQ">
+            <objects>
+                <viewController id="7jx-RL-nfU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kWg-5g-0R8"/>
+                        <viewControllerLayoutGuide type="bottom" id="cZE-hi-4ld"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IGr-Pt-9pn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkC-N4-dnX">
+                                <rect key="frame" x="141" y="81" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cO-gh-VsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="1104"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HwY-3N-iY0">
