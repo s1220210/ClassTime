@@ -40,7 +40,6 @@ class ScheduleViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("DEBUG: viewWillDisappear")
         // Realmに保存されてるDog型のオブジェクトを全て取得
         let classNumbers = realm.objects(Classes.self)
         // 先頭の犬を取り出し

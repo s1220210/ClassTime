@@ -30,3 +30,14 @@ class Classes: Object {
     //時限数
     @objc dynamic var classNumber = 0
 }
+
+class Times: Object {
+    // 管理用 ID。プライマリーキー
+    @objc dynamic var id = 0
+    // week
+    @objc dynamic var s_time = Date()
+    @objc dynamic var e_time = Date()
+    
+    @objc dynamic var classN = ""
+    
+}
