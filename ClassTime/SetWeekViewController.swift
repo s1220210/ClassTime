@@ -83,6 +83,9 @@ class SetWeekViewController: UIViewController {
         
         super.viewWillDisappear(animated)
         print("DEBUG: viewWillDisappear_")
+        
+        let notification_instance = NotificationController()
+        notification_instance.setData()
     }
 
     override func didReceiveMemoryWarning() {

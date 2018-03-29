@@ -118,13 +118,13 @@ class SetTimeViewController: FormViewController {
     }
     
     private func printAll(){
+        
         print("start:", startTime[0])
         print("end:", endTime[0])
         
         for i in 0..<classNumber{
         print("f.string:",SetTimeViewController.dateFormat.string(from: self.startTime[i]))
             SetTimeViewController.dateFormat.string(from: self.startTime[i])
-            //startTime[i].locale = NSLocale(localeIdentifier: "ja_JP")
         }
         
         let n = timeArray.count
@@ -139,10 +139,8 @@ class SetTimeViewController: FormViewController {
                     time.classN = String(i) + "限目";
                     time.id = i
                 }
-                setNotification(time: time)
             }
             else{
-                
                 //var time: Time!
                 let time = Times()
                 time.s_time = startTime[i]
@@ -152,46 +150,17 @@ class SetTimeViewController: FormViewController {
                 try! realm.write() {
                     realm.add(time)
                 }
-                setNotification(time: time)
             }
             
             
         }//for i in 0..<classNumber{
+        let notification_instance = NotificationController()
+        notification_instance.setData()
+        
         print("printAll()")
     }
-}
-    func setNotification(time: Times) {
-        let content = UNMutableNotificationContent()
-        content.title = time.classN
-        content.body  = SetTimeViewController.dateFormat.string(from: time.s_time) + " ~ " + SetTimeViewController.dateFormat.string(from: time.e_time)    // bodyが空だと音しか出ない
-        content.sound = UNNotificationSound.default()
-        
-        // ローカル通知が発動するtrigger（日付マッチ）を作成
-        let calendar = NSCalendar.current
-        
-        //時間指定
-        let dateComponents = calendar.dateComponents([.hour, .minute], from: time.s_time as Date)
-        
-        //トリガー設定および繰り返し
-        let trigger = UNCalendarNotificationTrigger.init(dateMatching: dateComponents, repeats: true)
-        
-        // identifier, content, triggerからローカル通知を作成（identifierが同じだとローカル通知を上書き保存）
-        let request = UNNotificationRequest.init(identifier: String(time.id), content: content, trigger: trigger)
-        
-        // ローカル通知を登録
-        let center = UNUserNotificationCenter.current()
-        center.add(request) { (error) in
-            print(error ?? "ローカル通知登録 OK")  // error が nil ならローカル通知の登録に成功したと表示します。errorが存在すればerrorを表示します。
-        }
-        
-        // 未通知のローカル通知一覧をログ出力
-        center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
-            for request in requests {
-                print("/---------------")
-                print(request)
-                print("---------------/")
-            }
-        }
+
+
     /*
     // MARK: - Navigation
 
