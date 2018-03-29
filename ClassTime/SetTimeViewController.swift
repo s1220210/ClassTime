@@ -136,7 +136,7 @@ class SetTimeViewController: FormViewController {
                 try! realm.write() {
                     time.s_time = startTime[i]
                     time.e_time = endTime[i]
-                    time.classN = String(i) + "限目";
+                    time.classN = String(i+1) + "限目";
                     time.id = i
                 }
             }

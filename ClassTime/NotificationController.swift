@@ -30,6 +30,16 @@ class NotificationController: UIViewController {
         center.removeAllDeliveredNotifications()
         // 全てのpendingな通知を削除する
         center.removeAllPendingNotificationRequests()
+        print("通知全削除----------")
+        // 未通知のローカル通知一覧をログ出力
+        center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
+            for request in requests {
+                print("/---------------")
+                print(request)
+                print("---------------/")
+            }
+        }
+        
         //ここまで
         
         let weeks = realm.objects(Week.self)
@@ -51,7 +61,8 @@ class NotificationController: UIViewController {
         for n in 0...6{
             if enable[n]==1 { //もし該当する曜日なら
                 weekN = n
-                for k in 0...classNumber{ //時間設定
+                for k in 0..<classNumber{ //時間設定
+                    print("classNumber:",classNumber)
                     setNotification(time: timeArray[k])
                 }
             }
@@ -78,7 +89,7 @@ class NotificationController: UIViewController {
         let trigger = UNCalendarNotificationTrigger.init(dateMatching: dateComponents, repeats: true)
         
         // identifier, content, triggerからローカル通知を作成（identifierが同じだとローカル通知を上書き保存）
-        let notification_id = String(weekN) + " " + String(time.id)
+        let notification_id = String(weekN+1) + "_" + String(time.id)
         let request = UNNotificationRequest.init(identifier: notification_id, content: content, trigger: trigger)
         
         // ローカル通知を登録
