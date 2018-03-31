@@ -117,6 +117,10 @@ class SetTimeViewController: FormViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.printAll()
+    }
+    
     private func printAll(){
         
         print("start:", startTime[0])
@@ -154,8 +158,6 @@ class SetTimeViewController: FormViewController {
             
             
         }//for i in 0..<classNumber{
-        let notification_instance = NotificationController()
-        notification_instance.setData()
         
         print("printAll()")
     }

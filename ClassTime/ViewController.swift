@@ -41,6 +41,10 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         tableView.delegate = self
         tableView.dataSource = self
         
+    }//override func viewDidLoad() {
+
+    override func viewWillAppear(_ animated: Bool) {
+        
         let weeks = realm.objects(Week.self)
         // 先頭のを取り出し
         if let w = weeks.first {
@@ -58,7 +62,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             if enable[i] == 1 {//指定あり
                 on_week = on_week + " " + w_jp[i]
             }
-            weeklabel.text = on_week
+            if on_week==""{
+                weeklabel.text = "未指定"
+            }
+            else{
+                weeklabel.text = on_week
+            }
         }//i, 0 to 6
         
         let classNumbers = realm.objects(Classes.self)
@@ -69,16 +78,17 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             let str: String = String(classes)
             cnlabel.text = str + " 時限"
         }
-        
-        for i in 0..<classes{
-            let time = timeArray[i]
-            let s = ViewController.dateFormat.string(from: time.s_time)
-            let e = ViewController.dateFormat.string(from: time.e_time)
-            let s_etime = s+" ~ "+e
-            setTime += [s_etime]
+        if classes != 0{
+            
+            for i in 0..<classes{
+                let time = timeArray[i]
+                let s = ViewController.dateFormat.string(from: time.s_time)
+                let e = ViewController.dateFormat.string(from: time.e_time)
+                let s_etime = s+" ~ "+e
+                setTime += [s_etime]
+            }
         }
-    }//override func viewDidLoad() {
-
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -24,13 +24,17 @@ class NotificationController: UIViewController {
         // Do any additional setup after loading the view.
         weekN = 0
         
+        print("DEBUG:setData()------")
+        
         //通知全部消す
         let center = UNUserNotificationCenter.current()
+        
         // 全ての通知済みの通知を削除する
         center.removeAllDeliveredNotifications()
         // 全てのpendingな通知を削除する
         center.removeAllPendingNotificationRequests()
         print("通知全削除----------")
+ 
         // 未通知のローカル通知一覧をログ出力
         center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
             for request in requests {

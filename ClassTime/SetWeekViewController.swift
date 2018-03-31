@@ -50,7 +50,7 @@ class SetWeekViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("DEBUG: viewWillDisappear")
+        print("DEBUG: viewWillDisappear_setweek")
         print("enable\(enable)")
         // Realmに保存されてるDog型のオブジェクトを全て取得
         let weeks = realm.objects(Week.self)
@@ -68,7 +68,7 @@ class SetWeekViewController: UIViewController {
             }
         }
         else {
-            print("DEBUG: no first")
+            print("DEBUG: no data and write firstdata")
             week.w0 = self.enable[0]
             week.w1 = self.enable[1]
             week.w2 = self.enable[2]
@@ -82,10 +82,10 @@ class SetWeekViewController: UIViewController {
         }
         
         super.viewWillDisappear(animated)
-        print("DEBUG: viewWillDisappear_")
+        print("DEBUG: viewWillDisappear_setweek")
         
-        let notification_instance = NotificationController()
-        notification_instance.setData()
+        //let notification_instance = NotificationController()
+        //notification_instance.setData()
     }
 
     override func didReceiveMemoryWarning() {

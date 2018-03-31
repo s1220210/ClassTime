@@ -38,7 +38,19 @@ class ScheduleViewController: UIViewController {
         }
 
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let week = realm.objects(Week.self)
+        let time = realm.objects(Times.self)
+        
+
+        if let w = week.first{
+            if let t = time.first{
+                let notification_instance = NotificationController()
+                notification_instance.setData()
+            }
+        }
+       
+    }
     override func viewWillDisappear(_ animated: Bool) {
         // Realmに保存されてるDog型のオブジェクトを全て取得
         let classNumbers = realm.objects(Classes.self)
@@ -51,7 +63,7 @@ class ScheduleViewController: UIViewController {
             }
         }
         super.viewWillDisappear(animated)
-        print("DEBUG: viewWillDisappear_")
+        print("DEBUG: viewWillDisappear_scheduleviewcontroller")
     }
 
     override func didReceiveMemoryWarning() {
