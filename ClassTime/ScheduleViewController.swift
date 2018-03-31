@@ -61,6 +61,8 @@ class ScheduleViewController: UIViewController {
         
         if let w = week.first{
             if let t = time.first{
+                print("DEBUG: scheduleViewController: time.first: ",t.s_time)
+                print("DEBUG: timeNumber: ",t.classN)
                 let notification_instance = NotificationController()
                 notification_instance.setData()
             }

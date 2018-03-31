@@ -13,11 +13,12 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     var enable: [Int] = [0, 0, 0, 0, 0, 0, 0]
     var w_jp:[String] = ["日","月","火","水","木","金","土"]
     
+    let realm = try! Realm()
     var week = Week()
     var myClass = Classes()
-    var timeArray = try! Realm().objects(Times.self).sorted(byKeyPath: "id", ascending: false)
-    let realm = try! Realm()
-
+    var timeArray = try! Realm().objects(Times.self).sorted(byKeyPath: "id", ascending: true)
+    //var times = try! Realm().objects(Times.self)
+    
     @IBOutlet weak var weeklabel: UILabel!
     @IBOutlet weak var cnlabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -45,6 +46,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
 
     override func viewWillAppear(_ animated: Bool) {
         
+        on_week = ""
         let weeks = realm.objects(Week.self)
         // 先頭のを取り出し
         if let w = weeks.first {
@@ -59,12 +61,15 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
         
         for i in 0...6{
-            on_week = ""
             if enable[i] == 1 {//指定あり
-                on_week = on_week + " " + w_jp[i]
+                print("enable[i]==1")
+                on_week += " " + w_jp[i]
             }
             
         }//i, 0 to 6
+        print("DEBUG: viewController_---")
+        print("DBUG: enable ",enable)
+        print("DEBUG: on_week ",on_week)
         if on_week == ""{
             weeklabel.text = "未指定"
         }
@@ -80,22 +85,29 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             let str: String = String(classes)
             cnlabel.text = str + " 時限"
         }
+        
+        print("timeArray: ",timeArray)
         if classes != 0{
-            
+            print("DEBUG:viewController_---")
+            let settime = setTime.count
+            print("setTimeCount: ",setTime.count)
+            print("timeArrayCount: ",timeArray.count)
             for i in 0..<classes{
                 let time = timeArray[i]
                 let s = ViewController.dateFormat.string(from: time.s_time)
                 let e = ViewController.dateFormat.string(from: time.e_time)
                 let s_etime = s+" ~ "+e
-                
-                if setTime[i].isEmpty{
+                print("setTime: ",s_etime)
+                if i >= settime{
                     setTime += [s_etime]
                 }
                 else{
                     setTime[i] =  s_etime
                 }
             }
+            print("setTimeCount: ",setTime.count)
         }
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,7 +133,8 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-
+    
+    
 
 }
 

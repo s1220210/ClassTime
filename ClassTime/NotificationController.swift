@@ -33,7 +33,7 @@ class NotificationController: UIViewController {
         center.removeAllDeliveredNotifications()
         // 全てのpendingな通知を削除する
         center.removeAllPendingNotificationRequests()
-        print("通知全削除----------")
+        print("通知全削除----------s")
  
         // 未通知のローカル通知一覧をログ出力
         center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
@@ -43,7 +43,7 @@ class NotificationController: UIViewController {
                 print("---------------/")
             }
         }
-        
+        print("通知全削除----------e")
         //ここまで
         
         let weeks = realm.objects(Week.self)
@@ -103,6 +103,7 @@ class NotificationController: UIViewController {
         }
         
         // 未通知のローカル通知一覧をログ出力
+        /*
         center.getPendingNotificationRequests { (requests: [UNNotificationRequest]) in
             for request in requests {
                 print("/---------------")
@@ -110,6 +111,7 @@ class NotificationController: UIViewController {
                 print("---------------/")
             }
         }
+         */
     }
     
     /*

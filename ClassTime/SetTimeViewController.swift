@@ -41,7 +41,7 @@ class SetTimeViewController: FormViewController {
     //var time: Time!   // 追加する
     
     let realm = try! Realm()
-    var timeArray = try! Realm().objects(Times.self).sorted(byKeyPath: "id", ascending: false)
+    var timeArray = try! Realm().objects(Times.self).sorted(byKeyPath: "id", ascending: true)
     
     static var dateFormat: DateFormatter = {
         let f = DateFormatter()
@@ -132,19 +132,26 @@ class SetTimeViewController: FormViewController {
         }
         
         let n = timeArray.count
+        print("timeArray.count",timeArray.count)
+        print(timeArray)
+        
         for i in 0..<classNumber{
             
             if i < n{
+                print("DEBUG: データ更新")
                 let time = timeArray[i]
+                print("before time ",time)
                 // データを更新
                 try! realm.write() {
                     time.s_time = startTime[i]
                     time.e_time = endTime[i]
                     time.classN = String(i+1) + "限目";
-                    time.id = i
+                    //time.id = i
                 }
+                print("after time ",time)
             }
             else{
+                print("DEBUG: データ追加")
                 //var time: Time!
                 let time = Times()
                 time.s_time = startTime[i]
@@ -158,7 +165,8 @@ class SetTimeViewController: FormViewController {
             
             
         }//for i in 0..<classNumber{
-        
+        let t = try! Realm().objects(Times.self).sorted(byKeyPath: "id", ascending: true)
+        print("timeArray_final: ",t)
         print("printAll()")
     }
 
