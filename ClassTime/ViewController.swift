@@ -59,16 +59,18 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         }
         
         for i in 0...6{
+            on_week = ""
             if enable[i] == 1 {//指定あり
                 on_week = on_week + " " + w_jp[i]
             }
-            if on_week==""{
-                weeklabel.text = "未指定"
-            }
-            else{
-                weeklabel.text = on_week
-            }
+            
         }//i, 0 to 6
+        if on_week == ""{
+            weeklabel.text = "未指定"
+        }
+        else{
+            weeklabel.text = on_week
+        }
         
         let classNumbers = realm.objects(Classes.self)
         // 先頭の犬を取り出し
@@ -85,10 +87,17 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
                 let s = ViewController.dateFormat.string(from: time.s_time)
                 let e = ViewController.dateFormat.string(from: time.e_time)
                 let s_etime = s+" ~ "+e
-                setTime += [s_etime]
+                
+                if setTime[i].isEmpty{
+                    setTime += [s_etime]
+                }
+                else{
+                    setTime[i] =  s_etime
+                }
             }
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

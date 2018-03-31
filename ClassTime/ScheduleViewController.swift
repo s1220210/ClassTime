@@ -39,16 +39,7 @@ class ScheduleViewController: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        let week = realm.objects(Week.self)
-        let time = realm.objects(Times.self)
         
-
-        if let w = week.first{
-            if let t = time.first{
-                let notification_instance = NotificationController()
-                notification_instance.setData()
-            }
-        }
        
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +54,17 @@ class ScheduleViewController: UIViewController {
             }
         }
         super.viewWillDisappear(animated)
+        
+        let week = realm.objects(Week.self)
+        let time = realm.objects(Times.self)
+        
+        
+        if let w = week.first{
+            if let t = time.first{
+                let notification_instance = NotificationController()
+                notification_instance.setData()
+            }
+        }
         print("DEBUG: viewWillDisappear_scheduleviewcontroller")
     }
 
